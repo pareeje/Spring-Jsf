@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	Add a new Student
+	<br></br>
+	<h:outputStylesheet library="css" name="table-style.css" />
+</h:head>
+
+<h:body>
+	<h:form>
+		<h:panelGrid columns="3" cellpadding="10" cellspacing="1">
+			<f:facet name="header">
+				<h:outputText value="Add New Student" />
+			</f:facet>
+			<h:outputLabel value="First name" />
+			<h:inputText id="fname" value="#{studentBean.firstName}" />
+			<br></br>
+			<h:outputLabel value="Last name" />
+			<h:inputText id="lname" value="#{studentBean.lastName}" />
+			<br></br>
+			<h:outputLabel value="Year level" />
+			<h:inputText id="year" value="#{studentBean.yearLevel}" />
+			<br></br>
+			<f:facet name="footer">
+				<h:panelGroup style="display:block; text-align:center">
+					<h:commandButton id="submit" value="Submit"
+						action="#{studentBean.add()}" />
+				</h:panelGroup>
+			</f:facet>
+
+		</h:panelGrid>
+
+	</h:form>
+</h:body>
+</html>
